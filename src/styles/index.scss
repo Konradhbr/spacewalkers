@@ -1,3 +1,5 @@
+// -----------------------------------------BASE ---------------------------------
+
 @font-face {
   font-family: 'nexa-bold';
   src: url('/fonts/nexa-bold.woff2') format('woff2'),
@@ -16,32 +18,48 @@ html {
   padding: 0;
   font-family: 'Nexa', sans-serif;
   overflow-x: hidden;
-  color: white;
+	color: white;
+	scroll-behavior: smooth;
 }
+// .container {
+//   box-sizing: border-box;
+//   padding: 0 10%;
+// }
 .container {
-  box-sizing: border-box;
-  padding: 0 10%;
+	box-sizing: border-box;
+	padding: 0 7%;
 }
-
-h1 {
-  margin-top: 12px;
-  font-size: 80px;
-  line-height: 80px;
-  font-weight: bold;
-}
-h2 {
-  font-size: 50px;
-  line-height: 50px;
-  font-weight: bold;
-}
+// h1 {
+//   margin-top: 12px;
+//   font-size: 80px;
+//   line-height: 80px;
+//   font-weight: bold;
+// }
+// h2 {
+//   font-size: 50px;
+//   line-height: 50px;
+//   font-weight: bold;
+// }
 p {
   font-size: 20px;
   line-height: 30px;
 }
+// li {
+//   font-size: 20px;
+//   line-height: 30px;
+//   font-weight: bold;
+// }
+h1 {
+	font-size: 50px;
+	line-height: 50px;
+}
+h2 {
+	font-size: 30px;
+	line-height: 30px;
+}
 li {
-  font-size: 20px;
-  line-height: 30px;
-  font-weight: bold;
+	font-size: 16px;
+	line-height: 26px;
 }
 button {
   width: 326px;
@@ -54,30 +72,57 @@ button {
   text-align: center;
   text-transform: uppercase;
 }
+
 .orange {
   color: orange;
 }
 .bold {
   font-weight: bold;
 }
-.message {
-	position: relative;
-	display: flex;
-	align-items: flex-start;
-	top: 10px;
-  height: 150px;
-}
 
 // -------------------HEADER INVEST -------------------------------------------------------
+
+.mobile {
+	position: relative;
+	background-image: url(/src/assets/images/Rectangle.png);
+	width: 100%;
+	height: 880px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	z-index: 5;
+	margin-top: -330px;
+
+	&--instructions {
+		//	height: 880px;
+		z-index: 2;
+		margin-top: -376px;
+    padding-top: 364px;
+	}
+}
+
+.mobile-hide {
+	display: none;
+}
+
+.logo {
+	img {
+		margin: 0;
+		max-width: 300px;
+		height: auto;
+	}
+}
+
 .header {
   position: relative;
   background-image: url(/src/assets/images/bg1.png);
   width: 100%;
-  height: 120vh;
+  height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
-  z-index: 4;
+	background-position: 75%;
+	z-index: 4;
+	margin-top: -265px;
   p {
     font-size: 25px;
     font-weight: bold;
@@ -85,52 +130,60 @@ button {
 }
 .nav-menu {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  //justify-content: space-between;
+	align-items: center;
+	justify-content: center;
+    padding-top: 330px;
 }
-.logo {
-  img {
-    margin-left: -65px;
-    max-width: 300px;
-    height: auto;
-  }
-}
+// .logo {
+//   img {
+//     margin-left: -65px;
+//     max-width: 300px;
+//     height: auto;
+//   }
+// }
 .menu {
-  display: flex;
+  display: none;
   a {
     text-decoration: none;
     margin-left: 50px;
     color: white;
     text-transform: uppercase;
-		font-weight: bold;
+    font-weight: bold;
 
-		p {
-			font-size: 18px;
-			font-weight: bold;
-		}
-	
+    p {
+      font-size: 18px;
+      font-weight: bold;
+    }
   }
 }
+
 .active {
-	position: relative;
-	&::after{
-		content: '';
-		position: absolute;
-		display: block;
-		left: -19px;
-		top: 15px;
-		width: 165px;
-		height: 19px;
-		background-color: orange;
-		z-index: -1;
-	}
-
-
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    display: block;
+    left: -19px;
+    top: 15px;
+    width: 165px;
+    height: 19px;
+    background-color: orange;
+    z-index: -1;
+  }
 }
+// .invest {
+//   margin-top: 65px;
+//   width: 50%;
+//   text-align: left;
+// }
 .invest {
-  margin-top: 65px;
-  width: 50%;
-  text-align: left;
+	margin-top: 20px;
+	width: 100%;
+	text-align: center;
+}
+.invest__test-button{
+	margin-top: 300px;
 }
 
 // --------------------------------------- BENEFITS ----------------------------------------
@@ -141,20 +194,24 @@ button {
   justify-content: flex-end;
   background-image: url(/src/assets/images/bg2.png);
   width: 100%;
-  height: 120vh;
+  height: 750px;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
+	background-position: 66%;
   z-index: 3;
-  margin-top: -350px;
+	margin-top: -185px;
 }
+
 .benefits__text {
   text-align: left;
-  width: 50%;
+	// width: 50%;
+	width: 70%;
+	//margin-left: 10%;
 
   p {
     font-size: 18px;
-    margin-top: 0;
+		margin-top: 0;
+		font-weight: bold;
   }
 
   ul {
@@ -181,54 +238,81 @@ button {
   align-items: center;
   justify-content: flex-end;
   width: 100%;
-  height: 120vh;
+  height: 100%;
   background-image: url(/src/assets/images/bg3.png);
-  background-size: cover;
+  //background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  margin-top: -240px;
-  z-index: 1;
+	margin-top: -690px;
+	  z-index: 1;
 }
 .instructions__text {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+	display: flex;
+  //justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
+	margin-top: 700px;
+
 }
 .instructions__text-left {
-  width: 30%;
+	// width: 30%;
+	width: 100%;
+	text-align: center;
+	//padding-top: 220px;
 }
 .instructions__text-right {
-  width: 31%;
+ // width: 31%;
+ width: 100%;
+ background-color: #020d42;
+ padding: 20px 50%;
+ margin-top: 207px;
+ h2 {
+	padding: 0 10%;
+}
+form {
+	padding: 0 10%;
+}
+button {
+	margin: 0 0 100px 0;
+}
+}
 
   input {
     display: block;
     height: 52px;
-    width: 100%;
+    width: calc(100% - 40px);
     background-color: rgba(255, 255, 255, 0.65);
-    //margin-bottom: 13px;
     border: 1px solid white;
-		border-radius: 27px;
-		padding-left: 35px;
-		
-		&::placeholder {
-			font-family: 'Nexa', sans-serif;
-			color: black;
-			font-size: 16px;
-			padding-bottom: 2px;
-			display: flex;
-			align-content: flex-start;
+    border-radius: 27px;
+    padding-left: 35px;
+    font-size: 16px;
+    font-family: 'Nexa', sans-serif;
 
-		}
+    &::placeholder {
+      font-family: 'Nexa', sans-serif;
+      color: black;
+      font-size: 16px;
+      padding-bottom: 2px;
+    }
   }
-}
-.input-placeholder {
-	position: relative;
-	
-	input {
-	padding: 10px 35px;
+  textarea {
+    display: block;
+    height: 36px;
+    width: calc(100% - 40px);
+    background-color: rgba(255, 255, 255, 0.65);
+    border: 1px solid white;
+    border-radius: 27px;
+    padding-left: 35px;
+    font-family: 'Nexa', sans-serif;
+    font-size: 16px;
+    padding-top: 19px;
+  }
+  .largeTextArea {
+    height: 150px;
+  }
 
-  font-size: 16px;
-}
+.input-placeholder {
+  position: relative;
 }
 .input-placeholder input:valid + .placeholder {
   display: none;
@@ -242,185 +326,366 @@ button {
   height: 25px;
   left: 10px;
   margin: auto;
-	color: black;
-	padding-left: 25px;
+  color: #7c7e82;
+  padding-left: 25px;
 
-	span {
-		color: red;
-	}
-
+  span {
+    color: red;
+  }
 }
 .checkbox {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
   input {
-    width: 50px;
-    height: 50px;
+    width: 18px;
+    height: 18px;
   }
   p {
-		padding-top: 2px;
-		margin-left: 10px;
+    padding-top: 2px;
+    margin-left: 10px;
     font-size: 14px;
     line-height: 18px;
   }
+  a {
+    color: white;
+  }
+}
+.terms {
+  height: 70px;
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 //  ---------------------------FOOTER----------------------------------------------
 .footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #020a30;
+	display: flex;
+	flex-direction: column;
+    text-align: center;
+  //justify-content: space-between;
+  //align-items: center;
+	background-color: #020a30;
+	border-top: 1px solid;
+
 }
 
 // --------------------MEDIA SCREEN--------------------------------------------------
-@media screen and (min-width: 2560px) {
-  .benefits {
-    margin-top: -520px;
-  }
-  .instructions {
-    margin-top: -500px;
-  }
-}
-@media screen and (min-width: 1920px) {
-  .instructions {
-    margin-top: -450px;
-  }
-}
-@media screen and (max-width: 1532px) {
-  .benefits {
-    margin-top: -240px;
-  }
-  .instructions {
-    height: 110vh;
-    padding-bottom: 170px;
-  }
-  .instructions__text-right {
-    padding-top: 200px;
-  }
-}
-@media screen and (max-width: 1280px) {
-  h1 {
-    font-size: 50px;
-    line-height: 50px;
-  }
-  h2 {
-    font-size: 30px;
-    line-height: 30px;
-  }
-  li {
-    font-size: 16px;
-    line-height: 26px;
-  }
- 
-  .instructions {
-    padding-bottom: 0px;
-    margin-top: -181px;
-  }
-  .instructions__text-right {
-    padding-top: 58px;
-  }
-}
+// @media screen and (max-width: 1024px) {
+//   h1 {
+//     font-size: 50px;
+//     line-height: 50px;
+//   }
+//   h2 {
+//     font-size: 30px;
+//     line-height: 30px;
+//   }
+//   li {
+//     font-size: 16px;
+//     line-height: 26px;
+//   }
+//   .container {
+//     padding: 0 7%;
+//   }
+//   // .menu {
+//   //   display: none;
+//   // }
+//   .nav-menu {
+//     justify-content: center;
+//     padding-top: 330px;
+//   }
+
+//   .mobile {
+//     position: relative;
+//     background-image: url(/src/assets/images/Rectangle.png);
+//     width: 100%;
+//     height: 880px;
+//     background-size: cover;
+//     background-repeat: no-repeat;
+//     background-position: center center;
+//     z-index: 5;
+//     margin-top: -330px;
+
+//     &--instructions {
+//       //	height: 880px;
+//       z-index: 2;
+//       margin-top: -279px;
+//     }
+//   }
+//   // .header {
+//   //   margin-top: -150px;
+//   //   background-position: 75%;
+//   //   margin-top: -284px;
+//   // }
+//   .mobile-hide {
+//     display: none;
+//   }
+//   .logo {
+//     img {
+//       margin: 0;
+//     }
+//   }
+//   .invest {
+//     margin-top: 20px;
+//     width: 100%;
+//     text-align: center;
+//   }
+
+//   .button {
+//     margin-top: 130px;
+//   }
+//   .benefits {
+//     margin-top: -215px;
+//     background-position: 64%;
+//   }
+//   .benefits__text {
+//     text-align: left;
+//     width: 100%;
+//     margin-left: 10%;
+//   }
+//   .instructions {
+//     margin-top: -255px;
+//   }
+//   .instructions__text {
+//     flex-direction: column;
+//     justify-content: space-between;
+//     align-items: center;
+//     padding-top: 800px;
+//   }
+//   .instructions__text-left {
+//     width: 100%;
+//     text-align: center;
+//     padding-top: 220px;
+//   }
+//   .instructions__text-right {
+//     width: 105%;
+//     background-color: #020d42;
+//     padding: 20px 50%;
+//     margin-top: 207px;
+
+//     h2 {
+//       padding: 0 10%;
+//     }
+//     form {
+//       padding: 0 10%;
+//     }
+//     button {
+//       margin: 0 0 100px 0;
+//     }
+//   }
+//   .footer {
+//     flex-direction: column;
+//     text-align: center;
+//     margin-top: 480px;
+//     border-top: 1px solid;
+
+//     .logo {
+//       margin-top: 25px;
+//     }
+//   }
+//   .footer__contact {
+//     margin-bottom: 20px;
+//   }
+// }
 @media screen and (min-width: 1010px) {
-  .mobile {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 970px) {
-  .container {
-    padding: 0 7%;
-  }
-  .menu {
-    display: none;
-  }
-  .nav-menu {
-    justify-content: center;
-    padding-top: 330px;
-  }
+	// --------------------------------HEADER INVEST ------------------------------------
+// 	.container {
+//   box-sizing: border-box;
+//   padding: 0 10%;
+// }
 
   .mobile {
-    position: relative;
-    background-image: url(/src/assets/images/Rectangle.png);
-    width: 100%;
-    height: 880px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    z-index: 5;
-    margin-top: -330px;
-
-    &--instructions {
-      //	height: 880px;
-      z-index: 2;
-      margin-top: -279px;
-    }
-  }
-  .header {
-    margin-top: -150px;
-    background-position: 75%;
-    margin-top: -284px;
-  }
-  .mobile-hide {
     display: none;
-  }
-  .logo {
-    img {
-      margin: 0;
-    }
-  }
-  .invest {
-    margin-top: 20px;
-    width: 100%;
-    text-align: center;
-  }
+	}
+	.header {
+		margin-top: 0;
+		background-position: center;
+	}
+	.mobile-hide {
+		display: flex;
+	}
+	.menu {
+		display: flex;
+	}
+	.nav-menu {
+		padding: 0;
+		justify-content: space-between;
+	}
+	.logo {
+		img {
+			margin-left: -64px;
+		}
+	}
+	.invest {
+		width: 50%;
+		text-align: left;
+		margin-top: 50px;
+	}
+	// ----------------------------BENEFITS-----------------------------------------------
+	.benefits {
+		height: 100%;
+    min-height: 760px;
+		padding-bottom: 117px;
+		margin-top: -200px;
+		padding-top: 200px;
+		padding-bottom: 200px;
 
-  .button {
-    margin-top: 130px;
-  }
-  .benefits {
-    margin-top: -215px;
-    background-position: 64%;
-  }
-  .benefits__text {
-    text-align: left;
-    width: 100%;
-    margin-left: 10%;
-  }
-  .instructions {
-    margin-top: -255px;
-  }
-  .instructions__text {
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 800px;
-  }
-  .instructions__text-left {
-    width: 100%;
-    text-align: center;
-    padding-top: 220px;
-  }
-  .instructions__text-right {
-    width: 130%;
-    background-color: #020d42;
-    padding: 20px 50%;
 
-    h2 {
-      padding: 0 10%;
-    }
-    form {
-      padding: 0 10%;
-    }
-    button {
-      margin: 0 0 100px 0;
-    }
-  }
-  .footer {
-    flex-direction: column;
-    text-align: center;
-    margin-top: 300px;
-    border-top: 1px solid;
-  }
-  .footer__contact {
-    margin-bottom: 20px;
-  }
+	}
+	.benefits__text {
+		width: 50%;
+		padding-top: 150px;
 }
+	// ----------------------------INSTRUCTIONS-----------------------------------------------
+	.instructions {
+		margin-top: -192px;
+		background-size: cover;
+	}
+	.instructions__text {
+		justify-content: space-between;
+		align-items: center;
+		flex-direction: row;
+		margin-top: 35px;
+		background-size: cover;
+		margin-bottom: 30px;
+
+	}
+
+	.instructions__text-left {
+		width: 29%;
+		//padding-top: 220px;
+		display: flex;
+		flex-direction: column;
+		text-align: left;
+	}
+	.instructions__text-right {
+		  width: 31%;
+padding: 0;
+margin-top: 95px;
+		background-color: transparent;
+	}
+	.button-full {
+		width: 100%;
+	}
+	.instructions__text-right button {
+		margin: 0;
+	}
+	// ---------------------------------------FOOTER-----------------------------------------------
+	.footer{
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
+@media screen and (min-width: 1440px) {
+h1 {
+  margin-top: 12px;
+  font-size: 80px;
+  line-height: 80px;
+  font-weight: bold;
+}
+h2 {
+  font-size: 50px;
+  line-height: 50px;
+  font-weight: bold;
+}
+li {
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: bold;
+}
+.benefits {
+	height: 100vh;
+	margin-top: -272px;
+	padding-top: 271px;}
+.benefits__text {
+	padding-top: 0;
+}
+.instructions {
+	margin-top: -250px;
+	padding-bottom: 100px;
+	padding-top: 55px;
+}
+}
+ @media screen and (min-width: 1600px) {
+	.button-full {
+		width: 326px;
+	}
+ }
+ @media screen and (min-width: 1921px) {
+	.instructions {
+		margin-top: -363px;
+		padding-top: 100px;
+
+	}
+	.benefits {
+		margin-top: -425px;
+		padding-top: 100px;
+	}
+ }
+
+
+// @media screen and (min-width: 1280px) {
+//   .benefits {
+//     margin-top: -219px;
+//   }
+//   .instructions {
+//     padding-bottom: 0px;
+//     margin-top: -215px;
+//     height: 143vh;
+//   }
+//   .instructions__text-right {
+//     margin-top: 115px;
+//   }
+// }
+// @media screen and (min-width: 1350px) {
+//   .benefits {
+//     margin-top: -235px;
+//   }
+//   .instructions {
+//     height: 120vh;
+//     margin-top: -255px;
+//   }
+// }
+
+// @media screen and (min-width: 1532px) {
+//   .header {
+//     height: 100vh;
+//   }
+//   .benefits {
+//     margin-top: -320px;
+//   }
+//   .instructions {
+//     height: 121vh;
+//     margin-top: -280px;
+//   }
+//   .instructions__text-right {
+//     margin-top: 80px;
+//   }
+// }
+// @media screen and (min-width: 1680px) {
+//   .instructions {
+//     height: 100vh;
+//   }
+// }
+// @media screen and (min-width: 1920px) {
+//   .header {
+//     height: 100vh;
+//   }
+//   .benefits {
+//     height: 100vh;
+//     margin-top: -280px;
+//   }
+//   .instructions {
+//     height: 100vh;
+//     margin-top: -325px;
+//   }
+// }
+// @media screen and (min-width: 2560px) {
+//   .benefits {
+//     margin-top: -420px;
+//   }
+//   .instructions {
+//     margin-top: -420px;
+//   }
+// }
