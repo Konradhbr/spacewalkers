@@ -16,13 +16,19 @@ html {
   padding: 0;
   font-family: 'Nexa', sans-serif;
   overflow-x: hidden;
+  overflow-y: scroll;
   color: white;
   scroll-behavior: smooth;
+  /* background-image: url(/src/assets/images/bg.jpg); */
 }
 
 .container {
   box-sizing: border-box;
   padding: 0 7%;
+}
+
+.smooth-container {
+  scroll-behavior: smooth;
 }
 
 p {
@@ -33,6 +39,7 @@ p {
 h1 {
   font-size: 50px;
   line-height: 50px;
+  margin: 30px 0 30px 0;
 }
 
 h2 {
@@ -48,7 +55,9 @@ li {
 button {
   width: 326px;
   height: 54px;
+  margin-top: 13px;
   border-radius: 27px;
+  border: solid #f6921e;
   background: #f6921e;
   color: white;
   font-size: 18px;
@@ -57,30 +66,23 @@ button {
   text-transform: uppercase;
 }
 
+button:hover {
+  border: solid white;
+  background: white;
+  color: #f6921e;
+}
+
 .orange {
   color: orange;
 }
 
+.red {
+  color: red;
+  font-size: 18px;
+}
+
 .bold {
   font-weight: bold;
-}
-
-.mobile {
-  position: relative;
-  background-image: url(/src/assets/images/Rectangle.png);
-  width: 100%;
-  height: 880px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  z-index: 5;
-  margin-top: -330px;
-}
-
-.mobile--instructions {
-  z-index: 2;
-  margin-top: -376px;
-  padding-top: 364px;
 }
 
 .mobile-hide {
@@ -95,14 +97,23 @@ button {
 
 .header {
   position: relative;
-  background-image: url(/src/assets/images/bg1.png);
+  width: 100%;
+  height: 1300px;
+  z-index: 4;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  background-image: url(/src/assets/images/image1.png);
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background-size: cover;
+  background-size: 145% auto;
+  background-position: center 78%;
   background-repeat: no-repeat;
-  background-position: 75%;
-  z-index: 4;
-  margin-top: -265px;
+  z-index: -1;
 }
 
 .header p {
@@ -114,7 +125,6 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 330px;
 }
 
 .menu {
@@ -156,23 +166,32 @@ button {
   text-align: center;
 }
 
-.invest__test-button {
-  margin-top: 300px;
+.invest__text-button {
+  margin-top: 380px;
 }
 
 .benefits {
   position: relative;
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  background-image: url(/src/assets/images/bg2.png);
+  justify-content: center;
   width: 100%;
-  height: 750px;
-  background-size: cover;
+  height: 1000px;
+  margin-top: -128px;
+  z-index: 4;
+}
+
+.benefits::before {
+  content: '';
+  position: absolute;
+  background-image: url(/src/assets/images/image2.png);
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+  height: 100%;
+  background-size: 145% auto;
+  background-position: 73% 104%;
   background-repeat: no-repeat;
-  background-position: 66%;
-  z-index: 3;
-  margin-top: -185px;
 }
 
 .benefits__text {
@@ -207,18 +226,32 @@ button {
   justify-content: flex-end;
   width: 100%;
   height: 100%;
-  background-image: url(/src/assets/images/bg3.png);
+  z-index: 4;
+}
+
+.instructions::before {
+  content: '';
+  position: absolute;
+  background-image: url(/src/assets/images/image3.png);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 153% auto;
+  background-position: center 8%;
   background-repeat: no-repeat;
-  background-position: center center;
-  margin-top: -690px;
-  z-index: 1;
+  z-index: -1;
+}
+
+.instructions form {
+  z-index: 10;
 }
 
 .instructions__text {
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-top: 700px;
+  margin-top: -100px;
 }
 
 .instructions__text-left {
@@ -230,7 +263,7 @@ button {
   width: 100%;
   background-color: #020d42;
   padding: 20px 50%;
-  margin-top: 207px;
+  margin-top: 300px;
 }
 
 .instructions__text-right h2 {
@@ -239,10 +272,6 @@ button {
 
 .instructions__text-right form {
   padding: 0 10%;
-}
-
-.instructions__text-right button {
-  margin: 0 0 100px 0;
 }
 
 input {
@@ -274,7 +303,7 @@ textarea {
   padding-left: 35px;
   font-family: 'Nexa', sans-serif;
   font-size: 16px;
-  padding-top: 19px;
+  padding-top: 17px;
 }
 
 .largeTextArea {
@@ -309,7 +338,6 @@ textarea {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 30px;
 }
 
 .checkbox input {
@@ -318,8 +346,7 @@ textarea {
 }
 
 .checkbox p {
-  padding-top: 2px;
-  margin-left: 10px;
+  margin: 12px;
   font-size: 14px;
   line-height: 18px;
 }
@@ -328,11 +355,16 @@ textarea {
   color: white;
 }
 
-.terms {
+.term-scroll {
   height: 70px;
   width: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
+}
+
+.term {
+  height: auto;
+  width: 100%;
 }
 
 .footer {
@@ -343,13 +375,23 @@ textarea {
   border-top: 1px solid;
 }
 
+@media screen and (min-width: 768px) {
+  .instructions__text-right {
+    margin-top: 420px;
+  }
+}
+
 @media screen and (min-width: 1010px) {
-  .mobile {
-    display: none;
+  body,
+  html {
+    scroll-behavior: smooth;
   }
   .header {
-    margin-top: 0;
-    background-position: center;
+    height: 900px;
+  }
+  .header::before {
+    background-size: 70% auto;
+    background-position: 115% center;
   }
   .mobile-hide {
     display: flex;
@@ -369,52 +411,81 @@ textarea {
     text-align: left;
     margin-top: 50px;
   }
+  .invest__text-button {
+    margin-top: 0;
+  }
   .benefits {
-    height: 100%;
-    min-height: 760px;
-    padding-bottom: 117px;
-    margin-top: -200px;
-    padding-top: 200px;
-    padding-bottom: 200px;
+    justify-content: flex-end;
+    height: 700px;
+    margin-top: -270px;
+  }
+  .benefits::before {
+    background-size: 70% auto;
+    background-position: -63% center;
+    background-repeat: no-repeat;
   }
   .benefits__text {
     width: 50%;
     padding-top: 150px;
   }
+  .benefits__text p {
+    font-weight: bold;
+  }
   .instructions {
-    margin-top: -192px;
-    background-size: cover;
+    height: 1050px;
+    margin-top: -140px;
+  }
+  .instructions::before {
+    bottom: 0;
+    height: 100%;
+    background-size: 80% auto;
+    background-position: center 100%;
+    background-repeat: no-repeat;
+    z-index: -1;
   }
   .instructions__text {
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
-    margin-top: 35px;
     background-size: cover;
-    margin-bottom: 30px;
+    padding-top: 60px;
   }
   .instructions__text-left {
-    width: 29%;
+    width: 35%;
     display: flex;
     flex-direction: column;
     text-align: left;
   }
   .instructions__text-right {
-    width: 31%;
+    width: 40%;
     padding: 0;
     margin-top: 95px;
     background-color: transparent;
   }
+  .instructions__text-right h2,
+  .instructions__text-right form {
+    padding: 0;
+    margin-left: 65px;
+  }
   .button-full {
     width: 100%;
-  }
-  .instructions__text-right button {
-    margin: 0;
   }
   .footer {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+  }
+  .footer__adress {
+    margin-right: 10px;
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  .benefits {
+    height: 950px;
+  }
+  .benefits__text {
+    padding-top: 250px;
   }
 }
 
@@ -435,18 +506,11 @@ textarea {
     line-height: 30px;
     font-weight: bold;
   }
-  .benefits {
-    height: 100vh;
-    margin-top: -272px;
-    padding-top: 271px;
-  }
-  .benefits__text {
-    padding-top: 0;
-  }
   .instructions {
-    margin-top: -250px;
-    padding-bottom: 100px;
-    padding-top: 55px;
+    height: 1300px;
+  }
+  .instructions__text-right {
+    width: 35%;
   }
 }
 
@@ -454,16 +518,47 @@ textarea {
   .button-full {
     width: 326px;
   }
+  .header {
+    height: 1070px;
+  }
+  .header::before {
+    background-position: 128% 100%;
+  }
 }
 
-@media screen and (min-width: 1921px) {
-  .instructions {
-    margin-top: -363px;
-    padding-top: 100px;
+@media screen and (min-width: 1920px) {
+  .header {
+    height: 1270px;
+  }
+  .header::before {
+    background-position: 105% 30%;
+    background-size: 60% auto;
   }
   .benefits {
-    margin-top: -425px;
-    padding-top: 100px;
+    height: 1100px;
+  }
+  .benefits::before {
+    background-position: -20% 30%;
+    background-size: 60% auto;
+  }
+  .instructions {
+    height: 1320px;
+    margin-top: -350px;
+  }
+  .instructions::before {
+    background-position: center center;
+    background-size: 70% auto;
   }
 }
-/*# sourceMappingURL=index.css.map */
+
+@media screen and (min-width: 2560px) {
+  .benefits {
+    height: 1300px;
+  }
+  .benefits__text {
+    padding-top: 350px;
+  }
+  .instructions {
+    height: 1600px;
+  }
+}
