@@ -8,5 +8,8 @@
   "author": "",
   "license": "ISC",
   "description": "",
-  "dependencies": {}
+  "dependencies": {
+    "axios": "^0.21.1",
+    "sweetalert2": "^10.12.6"
+  }
 }

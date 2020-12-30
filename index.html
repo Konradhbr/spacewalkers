@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SpaceWalkers</title>
 
-    <link rel="stylesheet" href="./css/index.css" />
-		<link />
+		<link rel="stylesheet" href="./node_modules/sweetalert2/dist/sweetalert2.min.css">
+		<link rel="stylesheet" href="./css/index.css" />
+
+		<script src="./node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./src/js/index.js"></script>
@@ -23,7 +26,7 @@
         </div>
         <div class="menu">
           <a href="#benefits" class="smooth-container "><p>Korzyści</p></a>
-          <a href="#form"><p>szkolenie</p></a>
+          <a href="#contactForm"><p>szkolenie</p></a>
           <a href="#invest"><p class="active">zainwestuj</p></a>
         </div>
       </nav>
@@ -34,7 +37,7 @@
           </p>
           <h1>Dowiedz się jak możesz na tym zarobić</h1>
           <div class="invest__text-button">
-            <a href="#form"><button type="submit" class="button">
+            <a href="#contactForm"><button type="submit" class="button">
               <span>zostań inwestorem</span>
             </button></a>
           </div>
@@ -47,8 +50,8 @@
         <div class="benefits__text">
           <p class="benefits__text-label">Korzyści inwestowania w gaming</p>
           <h2 class="benefits__text-title">
-            Inwestorzy z całego świata dostrzegli potencjał inwestycji w gaming.
-            Co napędza ich optymizm?
+						Inwestorzy z&nbsp;całego świata dostrzegli potencjał inwestycji w&nbsp;gaming. 
+						Co napędza ich optymizm?
           </h2>
           <ul class="benefits__text-description">
             <li>bardzo wysoki popyt na produkcje wideo</li>
@@ -73,33 +76,66 @@
               swoje ciężko zarobione pieniądze.
 						</p>
           </div>
-          <div id='form' class="instructions__text-right">
+          <div id='contactForm' class="instructions__text-right">
             <h2>Wypełnij formularz<br/> i dowiedz się więcej</h2>
-            <form action="#" method="POST" @submit.prevent="submit">
-              <div class="input-placeholder">
-								<input id="name" type="text" name="name" value required />
-                <div class="placeholder">Imię i nazwisko <span>*</span></div>
-              </div>
-              <br />
-              <div class="input-placeholder">
-							<textarea id="company" type="text" name="company" placeholder="Nazwa firmy" style="color: black;"></textarea>
-              </div>
-              <br />
-              <div class="input-placeholder">
-								<textarea id="mobile-number" type="text" name="mobile-number"  placeholder="Numer telefonu" pattern="[0-9]{3}[0-9]{3}[0-9]{3}"></textarea>
-              </div>
-              <br />
-              <div class="input-placeholder">
-								<textarea id="email" type="text" name="email" required onkeypress="disappear()"></textarea>
-                <div id="holderReq" class="placeholder">
-                  Adres e-mail <span>*</span>
-                </div>
-              </div>
-              <br />
-              <div class="input-placeholder">
-							<textarea class="largeTextArea" id="message" type="text" name="message" placeholder="Wiadomość"></textarea>
-              <br />
-              <div class="checkbox">
+						<form id="form" action="https://tecra.space/api/spacewalkers/training" method="POST">
+							<div class="input-placeholder">  
+								<input
+									id="name"
+									type="text"
+									name="name"
+									required
+								>
+								</input>
+								<div class="placeholder">Imię i nazwisko
+									<span class="red">&nbsp;*</span>
+								</div>           
+							</div>
+							<br />
+							<div class="input-placeholder">
+								<input
+									id="company"
+									type="text"
+									name="company"
+								>
+								</input>
+								<div class="placeholder">Nazwa firmy
+								</div>
+							</div>
+							<br />
+							<div class="input-placeholder">
+								<input
+									id="mobile-number"
+									type="text"
+									name="mobile-number"
+									pattern="[0-9]{3}[0-9]{3}[0-9]{3}"
+								></input>
+								<div class="placeholder">Numer telefonu
+								 </div>
+							</div>
+							<br />
+							<div class="input-placeholder">
+								<input
+									id="email"
+									type="email"
+									name="email"
+									required
+								>
+								</input>
+								<div class="placeholder">Adres e-mail
+								 <span class="red">&nbsp;*</span>
+								</div>
+							</div>
+							<br />
+							<div id="message-input" class="input-placeholder">
+								<textarea
+									id="message"
+									type="text"
+									name="message"
+									placeholder="Wiadomość"
+								></textarea>
+							</div>
+              <div class="checkbox terms-section">
 								<input type="checkbox" id="legals" required />
                 <div class="term-scroll">
                   <p>
@@ -140,10 +176,10 @@
 									</p>
 								</div>
 							</div>
-							<button type="submit" class="button button-full" onclick="qwe();">
+							<button id="btnForm" type="submit" value="submit" class="button button-full">
 								<span>wyślij wiadomość</span>
               </button>
-            </form>
+						</form>
           </div>
         </div>
       </section>
@@ -165,7 +201,7 @@
           mail: <span class="orange">hello@spacewalkers.games</span>
         </p>
       </div>
-    </footer>
+		</footer>
   </body>
 </html>
 <!-- https://tecra.space/api/spacewalkers/training -->
